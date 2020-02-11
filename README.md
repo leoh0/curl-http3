@@ -2,7 +2,7 @@
 
 curl은 아직 http3를 experimental로만 지원 하고 있는 상태이다. 그래서 QUIC를 구현한 `ngtcp2`나 [quiche](https://github.com/curl/curl/blob/master/docs/HTTP3.md#quiche-version)를 이용해서 컴파일해서 alt-svc http2나 http3를 사용할 수 있다.
 
-그래서 이걸 쉽게 빌드해서 사용하기 위해 `quiche` 라이브러리로 만든 4.8Mb짜리 작은 curl docker image 를 만들어 보았다.
+그래서 이걸 쉽게 빌드해서 사용하기 위해 `quiche` 라이브러리로 만든 `4.8Mb`짜리 작은 curl docker image 를 만들어 보았다.
 
 ## 사용방법
 
