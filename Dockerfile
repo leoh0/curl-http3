@@ -25,7 +25,9 @@ RUN apk add --update \
     autoconf \
     automake \
     pkgconfig \
-  && rm -rf /var/cache/apk/*
+    ca-certificates \
+  && rm -rf /var/cache/apk/* \ 
+  && update-ca-certificates
 
 WORKDIR /app
 
@@ -70,6 +72,7 @@ RUN cd /app/curl \
 
 FROM scratch
 
+COPY --from=base /etc/ssl/certs/ /etc/ssl/certs/
 COPY --from=base /app/curl/src/curl /curl
 
 ENTRYPOINT [ "/curl" ]
